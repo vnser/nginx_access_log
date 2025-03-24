@@ -46,7 +46,8 @@ if ($stmt->rowCount() === 0) {
     echo "表格 'access_logs' 已存在，跳过创建。";
 }
 
-$logFile = 'C:\Users\Administrator\Downloads\Compressed\app.szgmedicine.cn.log_mHSr5\app.szgmedicine.cn.log';
+$logFile = 'access.log';
+//$logFile = 'C:\Users\Administrator\Downloads\Compressed\app.szgmedicine.cn.log_mHSr5\app.szgmedicine.cn.log';
 // 获取日志文件的总行数
 if (!file_exists($logFile)) {
     die("❌ 日志文件不存在！\n");
