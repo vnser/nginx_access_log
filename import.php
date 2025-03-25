@@ -23,17 +23,18 @@ if ($stmt->rowCount() === 0) {
             INDEX idx_ip (ip),
             INDEX idx_request_url (request_url),
             INDEX idx_access_time (access_time)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        );
     ";
 
     // 执行创建表 SQL
     $pdo->exec($tableCreateSQL);
-    echo "表格 'access_logs' 已创建！";
+    echo "表格 'access_logs' 已创建！\n";
 } else {
-    echo "表格 'access_logs' 已存在，跳过创建。";
+    echo "表格 'access_logs' 已存在，跳过创建。\n";
 }
 
 $logFile = 'access.log';
+$logFile = 'C:\Users\Administrator\Downloads\Compressed\app.szgmedicine.cn.log';
 //$logFile = 'C:\Users\Administrator\Downloads\Compressed\app.szgmedicine.cn.log_mHSr5\app.szgmedicine.cn.log';
 // 获取日志文件的总行数
 if (!file_exists($logFile)) {
